@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormControl , FormGroup, Validators } from "@angular/forms";
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
+declare var $: any;
 
 @Injectable({
   providedIn: 'root'
@@ -51,5 +52,17 @@ export class PhonebookService {
 			number: numbers.number,
 			important: numbers.important,
         });
+    }
+
+    toggleForm(check=false){
+      if (check) {
+          if ($('#phonebook').is(':visible')){
+              //do nothing
+          }else{
+              $('#phonebook').toggle();
+          }
+      }else{
+          $('#phonebook').toggle(); 
+      }
     }
 }

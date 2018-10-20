@@ -8,29 +8,30 @@ footer
 //puts background for the content-box where the nav is linking
 #content_container
 	background: linear-gradient(rgba(136, 204, 0, 0.9), rgba(68, 102, 0, 0.2))
-	background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2)),url("./assets/jeans.jpg")
+	background: linear-gradient(rgba(255, 255, 255, 1), rgba(28, 74, 28, 0.2)),url("./assets/jeans.jpg")
 	//background-image: url("./assets/jeans.jpg")
 	background-repeat: repeat
-	
 
-//fixes the checkbox bug in the form	
-.checkbox_left
-	left: 0 !important
-	padding: 0 !important
+//Table, forms in importantNumbers and phonebook component are styled with this
+.make_tables_responsive
+	max-width: 100%
+	width: 100%
+	height: auto
 
+.make_headings_responsive
+	font-size: 7vmin
 
-.show_block
-	display: block
-
-.make_me_responsive
-	font-size: 2.5vmin
-	max-width: 600px
-	width: auto
+.make_text_responsive
+	font-size: 4vmin
 
 //fixes the width of the search field in the forms
 #searchfield
-	width: 90%
+	width: 85%
 
-input[type="checkbox"]:focus
-	outline: 0
-  
+@media only screen and (min-width: 768px)
+	.make_headings_responsive
+		font-size: 3vmin
+
+	.make_text_responsive
+		font-size: 2vmin
+		

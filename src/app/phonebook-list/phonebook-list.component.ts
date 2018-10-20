@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PhonebookService  } from "../shared/phonebook.service";
+import { PhonebookService  } from '../shared/phonebook.service';
+import { PhonebookComponent } from '../phonebook/phonebook.component';
 
 @Component({
   selector: 'app-phonebook-list',
@@ -11,7 +12,8 @@ export class PhonebookListComponent implements OnInit {
 	showDeletedMessage : boolean;
 	searchText:string = "";
 
-  constructor(private phonebookService: PhonebookService) { }
+  constructor(private phonebookService: PhonebookService,
+  			  private phonebookComponent: PhonebookComponent) { }
 
   ngOnInit() {
   	this.phonebookService.getNumbers().subscribe(
@@ -23,6 +25,7 @@ export class PhonebookListComponent implements OnInit {
 		                }
 			        })
 			 	});
+  	
   }
 
   	onDelete(){
@@ -51,4 +54,7 @@ export class PhonebookListComponent implements OnInit {
 	   		
 	}
 
+	onShowForm(check){
+		this.phonebookService.toggleForm(check);
+	}
 }
